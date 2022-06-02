@@ -1,9 +1,14 @@
 import './App.css';
 import CardList from './components/CardList';
+import Nav from './components/Nav';
 
 function App() {
   return (
-    <CardList />
+    <div>
+      <Nav/>
+      <CardList />
+    </div>
+    
   );
 }
 
