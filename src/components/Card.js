@@ -14,8 +14,10 @@ const Card = (props) => {
         setColorG(Math.floor(Math.random()*256));
         setColorB(Math.floor(Math.random()*256));
 
-        console.log("RGB:",ColorR, ",", ColorG, ",", ColorB);
-    }
+        console.log(
+`Row: ${props.y} Column: ${props.x}
+RGB: ${ColorR}, ${ColorG}, ${ColorB}`);
+        }
 
     return (
         <div 
@@ -25,6 +27,8 @@ const Card = (props) => {
                 width: `${dimensions}vw`, 
                 height: `${dimensions}vh`
             }}
+            data-position={`${props.y}${props.x}`}
+            data-color={`rgb(${ColorR} ${ColorG} ${ColorB})`}
             onClick={ChangeColor}
         >
         </div>
