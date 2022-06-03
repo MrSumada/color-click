@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 function App() {
   return (
     
-      <Router basename="/">
+      <Router basename="/color-click/">
         <Nav/>
         <Routes>
           <Route exact path='/' element={<CardList num={5}/>}/>
