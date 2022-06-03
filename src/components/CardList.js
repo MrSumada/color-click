@@ -1,11 +1,11 @@
 import React from "react";
 import CardRow from "./CardRow";
 
-const CardList = () => {
+const CardList = (props) => {
 
     return (
         <div className="card-row">
-            {[...Array(10)].map((e, i) => <CardRow key={i}/>)}
+            {[...Array(props.num)].map((e, i) => <CardRow num={props.num} key={i} />)}
         </div>
     )
 

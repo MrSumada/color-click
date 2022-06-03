@@ -1,28 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
-
-    const [number, setNumber] = useState();
-
-    function navClick1() {
-        console.log("1!")
-    }
-    function navClick25() {
-        console.log("25!")
-    }
-    function navClick100() {
-        console.log("100!")
-    }
 
     return (
         <nav> 
             <h1>Color Click!</h1>
             <div>
                 <ul>
-                    <li onClick={navClick1}>1</li>
-                    <li onClick={navClick25}>25</li>
-                    <li onClick={navClick100}>100</li>
+                    <Link className="nav-link" to="/1">1</Link>
+                    <Link className="nav-link" to="/9">9</Link>
+                    <Link className="nav-link" to="/25">25</Link>
+                    <Link className="nav-link" to="/100">100</Link>
+                    <Link className="nav-link" to="/400">400</Link>
+                    <Link className="nav-link" to="/1024">1024</Link>
                 </ul>
             </div>
         </nav>
