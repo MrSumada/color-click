@@ -10,7 +10,7 @@ const Nav = () => {
         setNavVis(!navVis);
     }
 
-    if (navVis) {
+    if (!navVis) {
         return (
             <nav> 
             <div className="header front">
