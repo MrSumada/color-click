@@ -26,13 +26,13 @@ const Nav = () => {
 
     return (
         <nav> 
-            <div className="header front">
+            <div className="header">
                 <div
                 className="front button"
                 onClick={toggleNav}
                 >
                 </div>
-                <h1
+                <h1 className="front"
                 onClick={toggleNav}
                 >Color Click!</h1>
             </div>
