@@ -13,7 +13,7 @@ const Nav = () => {
     if (!navVis) {
         return (
             <nav> 
-            <div className="header front">
+            <div className="header">
                 <div
                 className="front button"
                 onClick={toggleNav}
