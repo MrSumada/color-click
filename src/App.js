@@ -1,12 +1,13 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CardList from './components/CardList';
 import Nav from './components/Nav';
 
 function App() {
   return (
     
-      <Router basename="/color-click/">
+      <BrowserRouter basename="/color-click/">
+      
         <Nav/>
         <Routes>
           <Route exact path='/' element={<CardList num={5}/>}/>
@@ -18,8 +19,8 @@ function App() {
           <Route exact path='/1024' element={<CardList num={32}/>}/>
           <Route path='*' element={<CardList num={3}/>}/>
         </Routes>
-        
-      </Router>
+      
+      </BrowserRouter>
   );
 }
 
