@@ -16,6 +16,7 @@ function App() {
           <Route exact path='/100' element={<CardList num={10}/>}/>
           <Route exact path='/400' element={<CardList num={20}/>}/>
           <Route exact path='/1024' element={<CardList num={32}/>}/>
+          <Route path='*' element={<CardList num={3}/>}/>
         </Routes>
         
       </Router>

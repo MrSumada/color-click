@@ -82,13 +82,14 @@ ul {
     width: 50vw;
     display: grid;
     grid-template-columns: 7vw 7vw 7vw;
-    grid-template-rows: 5vh 5vh;
+    grid-template-rows: 4vh 4vh;
     align-items: flex-start;
   }
 
   h1 {
     text-align: center;
-    line-height: 40px;
+    font-size: 1.5em;
+    line-height: 30px;
   }
 
   .header {
@@ -102,6 +103,6 @@ ul {
   }
 
   .nav-link {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
