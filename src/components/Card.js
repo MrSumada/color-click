@@ -16,11 +16,13 @@ const Card = (props) => {
         storedR = Math.floor(Math.random()*256);
         storedG = Math.floor(Math.random()*256);
         storedB = Math.floor(Math.random()*256);
+        localStorage.setItem(`Color${props.y}${props.x}`, JSON.stringify([storedR, storedG, storedB]));
     }
 
     const [ColorR, setColorR] = useState(storedR);
     const [ColorG, setColorG] = useState(storedG);
     const [ColorB, setColorB] = useState(storedB);
+   
 
     const dimensions = 100/props.num;
 
