@@ -25,8 +25,8 @@ h1 {
 ul {
   display: flex;
   justify-content: space-between;
-  width: 40vw;
-  margin: -5px 0;
+  width: 50vw;
+  margin: 0;
 }
 
 .header {
@@ -45,6 +45,7 @@ ul {
   cursor: pointer;
   display: inline;
   aspect-ratio: 1 / 1;
+  margin: 5px 0;
 }
 
 .nav-link {
@@ -77,12 +78,13 @@ ul {
   }
 
   ul {
-    margin: -5px 5vw;
-    text-align: end;
-    width: 50vw;
+    margin: 0px 10vw;
+    text-align: center;
+    width: 40vw;
     display: grid;
-    grid-template-columns: 7vw 7vw 7vw;
+    grid-template-columns: 13vw 13vw 13vw;
     grid-template-rows: 4vh 4vh;
+    gap: 0 3vw;
     align-items: flex-start;
   }
 
@@ -94,7 +96,7 @@ ul {
 
   .header {
     justify-content: space-between;
-    gap: 0;
+    /* gap: 1; */
   }
 
   .button {

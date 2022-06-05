@@ -1,18 +1,37 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Card = (props) => {
 
-    const [ColorR, setColorR] = useState(Math.floor(Math.random()*256));
-    const [ColorG, setColorG] = useState(Math.floor(Math.random()*256));
-    const [ColorB, setColorB] = useState(Math.floor(Math.random()*256));
+    const storedColor = JSON.parse(localStorage.getItem(`Color${props.y}${props.x}`));
+    let storedR;
+    let storedG;
+    let storedB;
+
+    if (storedColor) {
+        storedR = storedColor[0]
+        storedG = storedColor[1]
+        storedB = storedColor[2]
+    } else {
+        storedR = Math.floor(Math.random()*256);
+        storedG = Math.floor(Math.random()*256);
+        storedB = Math.floor(Math.random()*256);
+    }
+
+    const [ColorR, setColorR] = useState(storedR);
+    const [ColorG, setColorG] = useState(storedG);
+    const [ColorB, setColorB] = useState(storedB);
 
     const dimensions = 100/props.num;
 
     function ChangeColor() {
-        setColorR(Math.floor(Math.random()*256));
-        setColorG(Math.floor(Math.random()*256));
-        setColorB(Math.floor(Math.random()*256));
+        const newR = Math.floor(Math.random()*256);
+        const newG = Math.floor(Math.random()*256);
+        const newB = Math.floor(Math.random()*256);
+        setColorR(newR);
+        setColorG(newG);
+        setColorB(newB);
+        localStorage.setItem(`Color${props.y}${props.x}`, JSON.stringify([newR, newG, newB]));
 
         console.log(
 `Row: ${props.y} Column: ${props.x}
