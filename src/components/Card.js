@@ -1,13 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Card = (props) => {
 
+    // set localStorage stored colors for RGB
     const storedColor = JSON.parse(localStorage.getItem(`Color${props.y}${props.x}`));
     let storedR;
     let storedG;
     let storedB;
 
+    // Get RGB color from localStorage const, or random if no localStorage
     if (storedColor) {
         storedR = storedColor[0]
         storedG = storedColor[1]
@@ -19,13 +21,13 @@ const Card = (props) => {
         localStorage.setItem(`Color${props.y}${props.x}`, JSON.stringify([storedR, storedG, storedB]));
     }
 
+    // set color state for R,G,B, set dimensions of square
     const [ColorR, setColorR] = useState(storedR);
     const [ColorG, setColorG] = useState(storedG);
     const [ColorB, setColorB] = useState(storedB);
-   
-
     const dimensions = 100/props.num;
 
+    // Change color function, save color to localStorage
     function ChangeColor() {
         const newR = Math.floor(Math.random()*256);
         const newG = Math.floor(Math.random()*256);
@@ -40,6 +42,18 @@ const Card = (props) => {
 RGB: ${ColorR}, ${ColorG}, ${ColorB}`);
         }
 
+    // Mouse Event Functions
+    const click = () => {
+        if (!props.mouseDown) {
+            ChangeColor();
+        }
+    }
+    const enter = () => {
+        if (props.mouseDown) {
+            ChangeColor();
+        }
+    }
+
     return (
         <div 
             className="card" 
@@ -50,7 +64,8 @@ RGB: ${ColorR}, ${ColorG}, ${ColorB}`);
             }}
             data-position={`${props.y}${props.x}`}
             data-color={`rgb(${ColorR} ${ColorG} ${ColorB})`}
-            onClick={ChangeColor}
+            onClick={click}
+            onMouseEnter={enter}
         >
         </div>
     )
