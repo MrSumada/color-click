@@ -64,7 +64,7 @@ RGB: ${ColorR}, ${ColorG}, ${ColorB}`);
             }}
             data-position={`${props.y}${props.x}`}
             data-color={`rgb(${ColorR} ${ColorG} ${ColorB})`}
-            onClick={click}
+            onMouseDown={click}
             onMouseEnter={enter}
         >
         </div>
