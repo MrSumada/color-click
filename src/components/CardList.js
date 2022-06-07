@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardRow from "./CardRow";
 
-const CardList = (props) => {
+const CardList = React.forwardRef((props, ref) => {
 
     // set mouse click state
     const [mouseDown, setMouseDown] = useState(false);
@@ -13,6 +13,7 @@ const CardList = (props) => {
             onMouseDown={click}
             onMouseUp={unClick}
             onMouseLeave={unClick}
+            ref={ref}
         >
             {[...Array(props.num)].map((e, i) => 
                 <CardRow 
@@ -24,7 +25,5 @@ const CardList = (props) => {
             )}
         </div>
     )
-
-
-}
+})
 export default CardList;

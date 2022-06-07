@@ -1,13 +1,9 @@
-import React, { useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { exportComponentAsJPEG } from "react-component-export-image";
-import html2canvas from "html2canvas";
-import CardList from "./CardList"; 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
-const Nav = () => {
+const Nav = (props) => {
 
-    let printNum = useParams();
 
     const [navVis, setNavVis] = useState("numbers");
     
@@ -28,29 +24,22 @@ const Nav = () => {
         window.location.reload();
     }
 
-    const printColorsComponent = () => {
-        if(!printNum) {return (<CardList num={5} ref={printRef}/>)}
-        return (<CardList num={printNum} ref={printRef}/>)
-    }
-
-    const printRef = useRef();
-
     const print = () => {
-        exportComponentAsJPEG(printRef);
+        props.func({});
     }
     
 
     if (navVis === "empty") {
         return (
             <nav> 
-            <div className="header">
-                <div
-                className="front button"
-                onClick={toggleNav}
-                >
+                <div className="header">
+                    <div
+                    className="front button"
+                    onClick={toggleNav}
+                    >
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         )
     }
 
@@ -74,11 +63,11 @@ const Nav = () => {
                     Reset?
                 </li>
 
-                {/* <li className="nav-link front"
+                <li className="nav-link front"
                     onClick={print}
                 >
                     Print Colors?
-                </li> */}
+                </li>
                     
             </nav>
         )
