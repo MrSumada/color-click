@@ -23,7 +23,7 @@ function App() {
           func={printCall}
         />
         <Routes>
-          <Route exact path='/' element={<CardList ref={printRef} num={5}/>}/>
+          <Route exact path='/' element={<CardList ref={printRef} num={3}/>}/>
           <Route exact path='/1' element={<CardList ref={printRef} num={1}/>}/>
           <Route exact path='/9' element={<CardList ref={printRef} num={3}/>}/>
           <Route exact path='/25' element={<CardList ref={printRef} num={5}/>}/>

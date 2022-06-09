@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const Nav = (props) => {
-
 
     const [navVis, setNavVis] = useState("numbers");
     
@@ -24,20 +22,13 @@ const Nav = (props) => {
         window.location.reload();
     }
 
-    const print = () => {
-        props.func({});
-    }
-    
+    const print = () => { props.func({});}
 
     if (navVis === "empty") {
         return (
             <nav> 
                 <div className="header">
-                    <div
-                    className="front button"
-                    onClick={toggleNav}
-                    >
-                    </div>
+                    <div className="front button" onClick={toggleNav}></div>
                 </div>
             </nav>
         )
@@ -47,28 +38,14 @@ const Nav = (props) => {
         return (
             <nav> 
                 <div className="header">
-                    <div
-                    className="front button"
-                    onClick={toggleNav}
-                    >
-                    </div>
-                    <h1 className="front"
-                    onClick={toggleNav}
-                    >Color Click!</h1>
+                    <div className="front button" onClick={toggleNav}></div>
+                    <h1 className="front" onClick={toggleNav}>Color Click!</h1>
                 </div>
-                    
-                <li className="nav-link front"
-                    onClick={reset}
-                >
-                    Reset?
-                </li>
-
-                <li className="nav-link front"
-                    onClick={print}
-                >
-                    Print Colors?
-                </li>
-                    
+                <ul className="options">
+                    <li className="nav-link front" onClick={reset}>Reset?</li>
+                    <li className="nav-link front" onClick={print}>Export?</li>
+                </ul>
+                
             </nav>
         )
     }
@@ -77,16 +54,9 @@ const Nav = (props) => {
         return (
             <nav> 
                 <div className="header">
-                    <div
-                    className="front button"
-                    onClick={toggleNav}
-                    >
-                    </div>
-                    <h1 className="front"
-                    onClick={toggleNav}
-                    >Color Click!</h1>
+                    <div className="front button" onClick={toggleNav}></div>
+                    <h1 className="front" onClick={toggleNav}>Color Click!</h1>
                 </div>
-                
                 <div>
                     <ul>
                         <Link className="nav-link front" to="/1">1</Link>
@@ -100,8 +70,6 @@ const Nav = (props) => {
             </nav>
         )
     }
-    
 }
-
 
 export default Nav;
