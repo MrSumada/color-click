@@ -3,6 +3,13 @@ body {
   /* font-family: 'Open Sans', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 nav {
@@ -72,6 +79,7 @@ ul {
 
 .card-row {
   position: absolute;
+  height: 100vh;
 }
 
 .front {
