@@ -12,7 +12,7 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: path.join(__dirname, "src", "index.html"),
       }),
-    +   require('postcss-100vh-fix'),
+        require('postcss-100vh-fix'),
         require('autoprefixer')
       ],
 };
