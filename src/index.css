@@ -160,3 +160,9 @@ ul {
   }
 
 }
+
+/* @supports (-webkit-touch-callout: none) {
+  html {
+    height: 95vh; 
+  }
+} */

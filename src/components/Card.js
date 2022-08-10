@@ -9,6 +9,20 @@ const Card = (props) => {
     let storedG;
     let storedB;
 
+    // Detect iOS
+    const iOS = () => {
+        return [
+            'iPad Simulator',
+            'iPhone Simulator',
+            'iPod Simulator',
+            'iPad',
+            'iPhone',
+            'iPod'
+        ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    }
+
     // Get RGB color from localStorage const, or random if no localStorage
     if (storedColor) {
         storedR = storedColor[0]
@@ -25,7 +39,9 @@ const Card = (props) => {
     const [ColorR, setColorR] = useState(storedR);
     const [ColorG, setColorG] = useState(storedG);
     const [ColorB, setColorB] = useState(storedB);
-    const dimensions = 100/props.num;
+    let dimensionsX = 100/props.num;
+    let dimensionsY = 100/props.num;
+    if (iOS === true) { dimensionsY = dimensionsY*.95}
 
     // Change color function, save color to localStorage
     function ChangeColor() {
@@ -59,8 +75,8 @@ RGB: ${ColorR}, ${ColorG}, ${ColorB}`);
             className="card" 
             style={{
                 backgroundColor: `rgb(${ColorR} ${ColorG} ${ColorB})`, 
-                width: `${dimensions}vw`, 
-                height: `${dimensions}vh`
+                width: `${dimensionsX}vw`, 
+                height: `${dimensionsY}vh`
             }}
             data-position={`${props.y}${props.x}`}
             data-color={`rgb(${ColorR} ${ColorG} ${ColorB})`}
