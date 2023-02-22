@@ -5,11 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+  min-height: 100svh;
 }
 
 html {
-  height: -webkit-fill-available;
+  height: 100svh;
 }
 
 nav {
