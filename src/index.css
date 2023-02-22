@@ -79,7 +79,8 @@ ul {
 
 .card-row {
   position: absolute;
-  height: 100svh;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .front {
