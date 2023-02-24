@@ -3,9 +3,9 @@ body {
   /* font-family: 'Open Sans', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* min-height: 100vh; */
+  /* min-height: 100svh; */
   /* mobile viewport bug fix */
-  max-height: 100svh;
+  max-height: 100ssvh;
 }
 
 html {
@@ -17,7 +17,7 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 94vw;
-  margin: 1vh 3vw;
+  margin: 1svh 3vw;
 }
 
 h1 {
@@ -79,7 +79,7 @@ ul {
 
 .card-row {
   position: absolute;
-  height: 100dvh;
+  height: 100svh;
 }
 
 .front {
@@ -98,7 +98,7 @@ ul {
     width: 40vw;
     display: grid;
     grid-template-columns: 13vw 13vw 13vw;
-    grid-template-rows: 4vh 4vh;
+    grid-template-rows: 4svh 4svh;
     gap: 0 3vw;
     align-items: flex-start;
   }
@@ -142,7 +142,7 @@ ul {
     width: 40vw;
     display: grid;
     grid-template-columns: 7vw 7vw 7vw;
-    grid-template-rows: 4vh 4vh;
+    grid-template-rows: 4svh 4svh;
     gap: 0 3vw;
     align-items: flex-start;
   }
@@ -163,6 +163,6 @@ ul {
 
 /* @supports (-webkit-touch-callout: none) {
   html {
-    height: 95vh; 
+    height: 95svh; 
   }
 } */
